@@ -18,7 +18,21 @@
  * @returns {number}
  */
 function getSpringMeltStreak(temperature) {
-    return undefined;
+    let avrgMax = 0;
+    let avrg = 0;
+
+    const checkAvrg = () => {
+        if (avrg > avrgMax) avrgMax = avrg;
+        avrg = 0;
+    };
+
+    for (const temp of temperature) {
+        temp > 0 ? (avrg += 1) : checkAvrg();
+    }
+
+    checkAvrg();
+
+    return avrgMax;
 }
 
 module.exports = getSpringMeltStreak;
