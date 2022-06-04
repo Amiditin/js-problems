@@ -13,7 +13,16 @@
  * @returns {number[]}
  */
 function union(a, b) {
-    return undefined;
+    let dict = { arr: [] };
+
+    const getDict = (arr1, arr2) => {
+        arr1.forEach((el) => (dict[el] = true));
+        arr2.forEach((el) => dict[el] && dict.arr.push(el));
+    };
+
+    a.length > b.length ? getDict(a, b) : getDict(b, a);
+
+    return dict.arr.sort((num1, num2) => num1 - num2);
 }
 
 module.exports = union;
