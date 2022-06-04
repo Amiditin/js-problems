@@ -12,7 +12,9 @@
  * @returns {undefined|number}
  */
 function checkBusTour(bridges) {
-    return -1;
+    let index = bridges.findIndex((item) => item <= 512);
+
+    return index != -1 ? index + 1 : undefined;
 }
 
 module.exports = checkBusTour;
