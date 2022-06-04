@@ -13,7 +13,12 @@
  * @returns {boolean}
  */
 function isPalindrome(value) {
-    return undefined;
+    for (let index = 0; index < value.length / 2; index++) {
+        if (value[index] != value[value.length - index - 1]) return false;
+    }
+    return true;
 }
+
+console.log(isPalindrome("121"));
 
 module.exports = isPalindrome;
