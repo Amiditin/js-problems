@@ -16,7 +16,15 @@
  * @returns {string}
  */
 function decrypt(secret) {
-    return undefined;
+    let new_str = "";
+
+    for (let i = 0; i < secret.length; i++) {
+        if (secret[i] == " ") new_str += " ";
+        else if (secret[i] == "z") new_str += "a";
+        else new_str += String.fromCharCode(secret.charCodeAt(i) + 1);
+    }
+    return new_str;
 }
+console.log(decrypt("zmc vd hfmnqd rozbdr"));
 
 module.exports = decrypt;
