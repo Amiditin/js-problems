@@ -16,6 +16,12 @@
  * @returns {(number|undefined)}
  */
 function getWinner(points) {
+    let difference = points.reduce((diff, cur) => {
+        return diff + +cur.split("-").reduce((num1, num2) => num1 - num2);
+    }, 0);
+
+    if (difference > 0) return 1;
+    if (difference < 0) return 2;
     return undefined;
 }
 
