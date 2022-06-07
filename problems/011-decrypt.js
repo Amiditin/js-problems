@@ -25,6 +25,5 @@ function decrypt(secret) {
     }
     return new_str;
 }
-console.log(decrypt("zmc vd hfmnqd rozbdr"));
 
 module.exports = decrypt;

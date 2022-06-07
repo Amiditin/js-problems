@@ -18,7 +18,14 @@
  * @returns {boolean}
  */
 function validatePassword(password) {
-    return undefined;
+    if (/[A-Z]/.test(password) && /[a-z]/.test(password) && /\d/.test(password))
+        return true;
+    return false;
 }
+
+console.log(validatePassword("abc4DEFG"));
+console.log(validatePassword("abcdefg"));
+console.log(validatePassword("abcdefG"));
+console.log(validatePassword("abcdef7"));
 
 module.exports = validatePassword;
