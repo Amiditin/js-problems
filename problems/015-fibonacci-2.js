@@ -14,6 +14,20 @@
  * @returns {undefined|number}
  */
 function isFibonacci(value) {
+    const fibonacci = (n) => {
+        if (n == 0) return 0;
+        return n == 1 ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
+    };
+
+    let i = 0;
+    let fibValue = fibonacci(i);
+
+    while (fibValue <= value) {
+        if (fibValue === value) return i;
+
+        fibValue = fibonacci(++i);
+    }
+
     return undefined;
 }
 
