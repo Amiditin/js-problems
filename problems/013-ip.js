@@ -19,7 +19,16 @@
  * @returns {boolean}
  */
 function isIpValid(address) {
-    return undefined;
+    let nums = address.split(".");
+    if (nums.length != 4) return false;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] < 0 || nums[i] > 255) return false;
+    }
+
+    return true;
 }
+
+console.log(isIpValid("127.-127.0.0"));
 
 module.exports = isIpValid;
